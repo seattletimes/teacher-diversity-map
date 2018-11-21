@@ -15,43 +15,38 @@
 
 <body>
 
-  <responsive-child class="map-container">
+  <responsive-child>
     <div class="outmost">
       <section class="chatter">
         <h1>Lorem Ipsum</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat aliquam lectus vitae porttitor. Donec euismod sem dui, ac gravida sem mattis sed. Fusce porttitor accumsan sem elementum convallis. Nam id augue lobortis, laoreet magna non,
           sodales risus. </p>
       </section>
-
+       
+    <div class="flex-container">
       <div class="aspect-ratio-outer">
         <div class="aspect-ratio-inner">
 
-          <leaflet-map zoom=7>
+          <leaflet-map lat="47.35" lng="-121.0" zoom=7>
             <tile-layer layer="cartoPositron"></tile-layer>
 
           </leaflet-map>
 
         </div>
         <aside class="legend">
-          <h1>Teacher-student diversity index</h1>
-          <ul class="scale">
-            <li>
-              <span class="block" style="background-color: #7f0000"></span> .76-1.0</li>
-            <li>
-              <li>
-              <span class="block" style="background-color: #d7301f"></span> .51-.75</li>
-            <li>
-              <span class="block" style="background-color: #fc8d59"></span> .26-.50</li>
-            <li>
-              <span class="block" style="background-color: #fdbb84"></span> 0.01-.25</li>
-            <li>
-              <span class="block" style="background-color: #fee8c8"></span> 0</li>
-            <li>
-              <span class="block" style="background-color: #d9d9d9"></span> Districts 100 students or less</li>
-          </ul>
-        </aside>
-      </div>
+          <div class="key"></div>
+            </aside>
+          </div>
 
+          <div class="tabs">
+            <div class="allDistrict selected tab">All students</div>
+            <div class="tab">Asian</div>
+            <div class="tab">Black</div>
+            <div class="tab">Latino</div>
+            <div class="tab">Multiracial</div>
+            <div class="tab">Native</div>
+            <div class="tab">Pacific Islander</div>
+            <div class="tab">White</div>
 
       <div class="source">Source: Name of source
         <span class="credit">XXX XXX / THE SEATTLE TIMES</div>
