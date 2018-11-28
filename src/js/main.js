@@ -24,6 +24,8 @@ var dataPi = require("./pi.geo.json");
 var dataWhite = require("./white.geo.json");
 var data = dataAll;
 
+// var raceOn = tab;
+
 var commafy = s => (s * 1).toLocaleString().replace(/\.0+$/, "");
 
 data.features.forEach(function(f) {
@@ -33,6 +35,8 @@ data.features.forEach(function(f) {
 	["totalstudents", "soc", "totalteachers", "toc"].forEach(function(prop) {
 		f.properties[prop] = commafy ((f.properties[prop]));
 	});
+  ["ratio"].forEach(function(prop) {f.properties[prop] =(f.properties[prop] * 1).toFixed(2);
+  });
 });
 
 var all = "key";
@@ -50,17 +54,18 @@ function highlightFeature(e) {
     }
 }
 
+// var onEachFeature = function(feature, layer) {
+//   layer.bindPopup(ich.popup({
+//     // dataAll: dataAll
+//     }))
+//       layer.on({
+//       mouseover: highlightFeature,
+//       mouseout: resetHighlight
+//       });
+// };
+
 var onEachFeature = function(feature, layer) {
   layer.bindPopup(ich.popup(feature.properties))
-  // layer.on({
-  // 	     'mouseover': function(e) {
-  //       layer.setStyle({ weight: 2, fillOpacity: .9 });
-  //     },
-  //     'mouseout': function(e) {
-  //       if (focused && focused == layer) { return }
-  //       layer.setStyle({ weight: 1, fillOpacity: 0.6 });
-  //     }
-  //   });
     layer.on({
     mouseover: highlightFeature,
     mouseout: resetHighlight
@@ -80,7 +85,8 @@ var getColor = function(d) {
     console.log(value)
     if (typeof value != "undefined") {
 
-     return value == "-0.1" ? '#d9d9d9' :
+     return value == "-0.2" ? '#a3a3a3' :
+        value == "-0.1" ? '#d9d9d9' :
      		value == "0" ? '#fee8c8' :
      		value >= "0.75" ? '#7f0000' :
         value >= "0.5" ? '#d7301f' :
@@ -122,7 +128,7 @@ Array.prototype.slice.call(document.querySelectorAll('.tab')).forEach(function(t
     tab.classList.add("selected");
     var race = tab.innerHTML;
 
-    if (race === 'allDistricts') {
+    if (race === 'All students of color') {
       data = dataAll;
     } else if (race === 'Asian') {
       data = dataAsian;
@@ -146,6 +152,8 @@ Array.prototype.slice.call(document.querySelectorAll('.tab')).forEach(function(t
       });
       ["totalstudents", "soc", "totalteachers", "toc"].forEach(function(prop) {
         f.properties[prop] = commafy ((f.properties[prop]));
+      });
+      ["ratio"].forEach(function(prop) {f.properties[prop] =(f.properties[prop] * 1).toFixed(2);
       });
     });
 
