@@ -128,7 +128,7 @@ Array.prototype.slice.call(document.querySelectorAll('.tab')).forEach(function(t
     tab.classList.add("selected");
     var race = tab.innerHTML;
 
-    if (race === 'All students of color') {
+    if (race === 'ALL STUDENTS OF COLOR') {
       data = dataAll;
     } else if (race === 'Asian') {
       data = dataAsian;
