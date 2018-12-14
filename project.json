@@ -5,13 +5,13 @@
       "path": "absolute-banding"
     },
     "live": {
-      "bucket": "",
-      "path": ""
+      "bucket": "projects.seattletimes.com",
+      "path": "2018/local/teacher-diversity-map"
     }
   },
   "title": "",
   "description": "",
-  "url": "",
+  "url": "https://projects.seattletimes.com/2018/teacher-diversity-wa/",
   "slug": "",
   "tags": []
 }

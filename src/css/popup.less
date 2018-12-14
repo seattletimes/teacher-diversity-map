@@ -6,8 +6,7 @@
     max-width: 300px;
   }
   @media @mobile {
-    overflow: scroll;
-    // max-height: 180px;
+    max-width: 200px;
   }
   .descript {
     margin: 6px 0;
@@ -31,6 +30,10 @@
     width: 100%;
     height: auto;
     padding-top: 10px;
+
+    @media @mobile {
+      padding: none;
+    }
   }
   .credit {
     font-size: 90%;
